@@ -1,8 +1,8 @@
 //1.
 
-function isOdd(num) {
-  return Boolean(num % 2);
-}
+// function isOdd(num) {
+//   return Boolean(num % 2);
+// }
 // const isOdd = num => Boolean(num % 2);
 
 //2.

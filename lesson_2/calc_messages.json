@@ -1,11 +1,24 @@
 {
-  "greeting": "Welcome to Calculator!\n",
-  "firstQ": "What is the first number?",
-  "invalidNumber": "Hmm... that doesn't look like a valid number.",
-  "secondQ": "What is the second number?",
-  "operation": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
-  "opResponse": "Must choose 1, 2, 3 or 4",
-  "badOp": "Bad operation!",
-  "result": "The result is:",
-  "repeat": "Another one?\n 'y' or 'n'"
+  "en": {
+    "greeting": "Welcome to Calculator!\n",
+    "firstQ": "What is the first number?",
+    "invalidNumber": "Hmm... that doesn't look like a valid number.",
+    "secondQ": "What is the second number?",
+    "operation": "What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+    "opResponse": "Must choose 1, 2, 3 or 4",
+    "badOp": "Bad operation!",
+    "result": "The result is:",
+    "repeat": "Another one?\n 'y' or 'n'"
+  },
+  "es": {
+    "greeting": "ESP Welcome to Calculator!\n",
+    "firstQ": "ESP What is the first number?",
+    "invalidNumber": "ESP Hmm... that doesn't look like a valid number.",
+    "secondQ": "ESP What is the second number?",
+    "operation": "ESP What operation would you like to perform?\n1) Add 2) Subtract 3) Multiply 4) Divide",
+    "opResponse": "ESP Must choose 1, 2, 3 or 4",
+    "badOp": "ESP Bad operation!",
+    "result": "ESP The result is:",
+    "repeat": "ESP Another one?\n 'y' or 'n'"
+  }
 }

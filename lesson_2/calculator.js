@@ -1,10 +1,11 @@
 const readline = require('readline-sync');
 const MESSAGES = require('./calc_messages.json');
+const LANGUAGE = 'es';
 
 let repeat, output;
 
-function prompt(question) {
-  return console.log(`=>${question}`);
+function prompt(question, lang = LANGUAGE) {
+  return console.log(`=>${MESSAGES[lang][question]}`);
 }
 
 function isInvalidNum(input) {
@@ -15,30 +16,30 @@ function isInvalidOperation(operation) {
   return !['1', '2', '3', '4'].includes(operation);
 }
 
-prompt(MESSAGES.greeting);
+prompt('greeting');
 
 do {
-  prompt(MESSAGES.firstQ);
+  prompt('firstQ');
   let number1 = readline.question();
 
   while (isInvalidNum(number1)) {
-    prompt(MESSAGES.invalidNumber);
+    prompt('invalidNumber');
     number1 = readline.question();
   }
 
-  prompt(MESSAGES.secondQ);
+  prompt('secondQ');
   let number2 = readline.question();
 
   while (isInvalidNum(number2)) {
-    prompt(MESSAGES.invalidNumber);
+    prompt('invalidNumber');
     number2 = readline.question();
   }
 
-  prompt(MESSAGES.operation);
+  prompt('operation');
   let operation = readline.question();
 
   while (isInvalidOperation(operation)) {
-    prompt(MESSAGES.opResponse);
+    prompt('opResponse');
     operation = readline.question();
   }
 
@@ -56,11 +57,12 @@ do {
       output = number1 / number2;
       break;
     default:
-      output = MESSAGES.badOp;
+      output = prompt('badOp');
   }
 
-  prompt(`${MESSAGES.result} ${output}\n`);
-  prompt(MESSAGES.repeat);
+  prompt('result');
+  console.log(output);
+  prompt('repeat');
   repeat = readline.question();
 
 } while (repeat === 'y');
