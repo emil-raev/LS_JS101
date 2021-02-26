@@ -1,6 +1,6 @@
 //1.
-for (let i = 1; i <= 10; i++) {
-  console.log('The Flintstones Rock!'.padStart(i + 'The Flintstones Rock!'.length));
+for (let index = 1; index <= 10; index++) {
+  console.log('The Flintstones Rock!'.padStart(index + 'The Flintstones Rock!'.length));
 }
 
 //2.

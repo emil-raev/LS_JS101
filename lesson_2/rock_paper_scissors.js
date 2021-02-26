@@ -1,6 +1,7 @@
 const readline = require('readline-sync');
 const VALID_CHOICES = ['rock', 'paper', 'scissors', 'lizard', 'Spock'];
 const CHOICE_ALIAS = { r: 'rock', p: 'paper', s: 'scissors', l: 'lizard', S: 'Spock' };
+const WIN_LIMIT = 3;
 const WINNING_COMBOS = {
   rock: ['scissors', 'lizard'],
   paper: ['rock', 'Spock'],
@@ -37,6 +38,7 @@ function displayWinner(winner) {
     prompt('Computer wins!');
   }
   prompt(`Score is: player - ${score.player} : computer - ${score.computer}`);
+
 }
 
 function updateScore(winner) {
@@ -54,19 +56,24 @@ while (true) {
 
   let randomIndex = Math.floor(Math.random() * VALID_CHOICES.length);
   let computerChoice = VALID_CHOICES[randomIndex];
-
   let winner = getWinner(playerChoice, computerChoice);
+
   updateScore(winner);
   displayWinner(winner);
 
-  if (score.player < 3 && score.computer < 3) continue;
+  if (score.player < WIN_LIMIT && score.computer < WIN_LIMIT) {
+    prompt(`Win ${WIN_LIMIT} to win the match!`);
+    continue;
+  }
+  prompt(`The match winner is ${winner}!`);
 
   prompt('Do you want to play again (y/n)?');
   let answer = readline.question();
-  while (/^[^ny]/i.test(answer)) {
+  while (/^[^ny]/i.test(answer[0])) {
     prompt('Please enter "y" or "n".');
     answer = readline.question();
   }
 
   if (/^n/i.test(answer)) break;
+  console.clear();
 }
