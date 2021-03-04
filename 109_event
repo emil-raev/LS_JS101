@@ -1,0 +1,78 @@
+/*
+JS109 Study Session
+- Introductions
+  - Where are you at currently? (in course, in assessment process)
+  - How are you prepping for exam?
+- Assessment Format & expectations
+  - Written
+  - Interview
+- Questions
+- Practice
+  - Conceptual (written prep)
+  - Technical (interview prep)
+  
+  
+  
+  
+Given a divisor and a bound, find the largest number N such that:
+N is divisible by the divisor
+N is less than or equal to the bound
+N is greater than 0.
+
+Test Cases
+console.log(maxMultiple(2, 7) === 6);
+console.log(maxMultiple(3, 10) === 9);
+console.log(maxMultiple(7, 17) === 14);
+console.log(maxMultiple(10, 50) === 50);
+console.log(maxMultiple(37, 200) === 185);
+console.log(maxMultiple(7, 100) === 98);
+  
+  
+  
+Problem Description
+Given an array of strings, return a boolean indicating whether
+at least three of the elements in the array have digits whose sum is
+divisible by 3.
+
+Elements of the argument array will be strings containing only string digits 0-9.
+
+For example:
+In the array ['35', '01110', '126', '57', '13'], 
+the sum of the digits of each element will be: [8, 3, 9, 12, 4]
+from the resulting sums, there are 3 that are evenly divisible by 3: [3, 9, 12]
+so our function would return true.  See the below test cases for more examples.
+
+
+Test Cases
+console.log(threeByThree(['01112', '0111', '00030', '2043', '12043']));
+// true
+console.log(threeByThree(['01112', '2043', '12043']));
+// false
+console.log(threeByThree(['01112', '2043']));
+// false
+console.log(threeByThree(['93', '9', '1', '25', '1212']));
+// true 
+  
+  
+  
+  
+  
+Given the string of chars alphabetic characters limited to a-z, do as in the sample cases.
+Each character in the string argument should appear in the returned string.
+The original character should be repeated as many times as its original position in the string argument.  (index 0 being position 1, index 1 being position 2...)
+The repeated sequences of a character should be separated by a hyphen in the returned string.
+In the repeated sequences of a character included in the returned string, the first instance of the character should be upper-case.  Subsequent instances of the character should be lowercase.
+
+Test Cases
+accum("abcd")    // "A-Bb-Ccc-Dddd"
+accum("RqaEzty") // "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+accum("cwAt")    // "C-Ww-Aaa-Tttt"
+  
+  
+  
+  
+  
+  
+  
+  */
+
