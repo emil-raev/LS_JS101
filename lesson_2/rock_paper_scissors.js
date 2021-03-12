@@ -47,7 +47,7 @@ function updateScore(winner) {
 
 while (true) {
   prompt(`Choose one by entering first letter: ${VALID_CHOICES.join(', ')}`);
-  let playerChoice = CHOICE_ALIAS[readline.question()];
+  let playerChoice = CHOICE_ALIAS[readline.question().toLowerCase];
 
   while (!VALID_CHOICES.includes(playerChoice)) {
     prompt("That's not a valid choice");
