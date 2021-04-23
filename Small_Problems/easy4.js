@@ -79,8 +79,8 @@
 // }
 
 //10
-function swap(string) {
-  return string.replace(/\b(\w)(\w*)(\w)\b/g, '$3$2$1');
-}
+// function swap(string) {
+//   return string.replace(/\b(\w)(\w*)(\w)\b/g, '$3$2$1');
+// }
 
-console.log(swap('Oh what a wonderful day it is'));
+// console.log(swap('Oh what a wonderful day it is'));

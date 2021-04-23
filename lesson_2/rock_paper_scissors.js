@@ -46,8 +46,9 @@ function updateScore(winner) {
 }
 
 while (true) {
+
   prompt(`Choose one by entering first letter: ${VALID_CHOICES.join(', ')}`);
-  let playerChoice = CHOICE_ALIAS[readline.question().toLowerCase];
+  let playerChoice = CHOICE_ALIAS[readline.question().toLowerCase()];
 
   while (!VALID_CHOICES.includes(playerChoice)) {
     prompt("That's not a valid choice");
@@ -73,7 +74,6 @@ while (true) {
     prompt('Please enter "y" or "n".');
     answer = readline.question();
   }
-
   if (/^n/i.test(answer)) break;
   console.clear();
 }

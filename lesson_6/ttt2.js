@@ -1,7 +1,7 @@
 const readline = require('readline-sync');
 
 const BOARD_SIZE = 3;
-const SQUARE_SIZE = [6, 3];
+const SQ_SIZE = [6, 3];
 const BLANK = ' ';
 const HORIZONTAL_LINE = '~';
 const LINE_CROSS = '+';
@@ -10,7 +10,7 @@ const HUMAN_MARKER = '\u274c';//'X';
 const COMPUTER_MARKER = '\u2b55';//'O';
 const WIN_LIMIT = 3;
 const CENTER_SQUARE = 4;
-const SQ_CENTERS = /(?<= {2}) {2}(?= {2})/g;
+const SQ_CENTERS = /(?<=( {2})) {2}(?=\1)/g;
 const SQ_CORNERS = / (?= {5})/g;
 const WINNING_LINES = [
   [0, 1, 2], [3, 4, 5], [6, 7, 8], // rows
@@ -37,23 +37,23 @@ function displayUI(board, score) {
 }
 function getTopLeftOffsets() {
   let firstColumnOffsets = Array.from(Array(3), (_, idx) => {
-    return idx * ((SQUARE_SIZE[1] + 1) * ((BOARD_SIZE * SQUARE_SIZE[0]) + 3));
+    return idx * ((SQ_SIZE[1] + 1) * ((BOARD_SIZE * SQ_SIZE[0]) + 3));
   });
   return firstColumnOffsets.map(offset => Array.from(Array(3), (_, idx) => {
-    return offset + (idx * (SQUARE_SIZE[0] + 1));
+    return offset + (idx * (SQ_SIZE[0] + 1));
   })).flat();
 }
 
 function getCenterOffsets() {
   return getTopLeftOffsets().map(offset => {
-    return offset + (3 * SQUARE_SIZE[0]) + 2 + Math.ceil(SQUARE_SIZE[0] / 2);
+    return offset + (3 * SQ_SIZE[0]) + 2 + Math.ceil(SQ_SIZE[0] / 2);
   });
 }
 
 function boardBuilder(board) {
-  let blankLine = lineBuilder(BLANK, VERTICAL_LINE, SQUARE_SIZE[0]);
-  let borderLine = lineBuilder(HORIZONTAL_LINE, LINE_CROSS, SQUARE_SIZE[0]);
-  let blankBoard = lineBuilder(blankLine, borderLine, SQUARE_SIZE[1]);
+  let blankLine = lineBuilder(BLANK, VERTICAL_LINE, SQ_SIZE[0]);
+  let borderLine = lineBuilder(HORIZONTAL_LINE, LINE_CROSS, SQ_SIZE[0]);
+  let blankBoard = lineBuilder(blankLine, borderLine, SQ_SIZE[1]);
 
   let blankSquares = getBlankSquares(board);
   let topLeftOffsets = getTopLeftOffsets();
@@ -66,7 +66,7 @@ function boardBuilder(board) {
     return BLANK;
   });
 
-  console.log(indexedBlankBoard.replace(SQ_CENTERS, (_, offset) => {
+  console.log(indexedBlankBoard.replace(SQ_CENTERS, (_, __, offset) => {
     return board[centerOffsets.indexOf(offset)]?.trim() || (BLANK + BLANK); //double blank to account for emoji taking two spaces
   }));
 }

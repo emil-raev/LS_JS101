@@ -85,9 +85,9 @@
 // }
 
 //11
-const HOUR_MINUTES = 60;
-const DAY_HOURS = 24;
-const DAY_MINUTES = HOUR_MINUTES * DAY_HOURS;
+// const HOUR_MINUTES = 60;
+// const DAY_HOURS = 24;
+// const DAY_MINUTES = HOUR_MINUTES * DAY_HOURS;
 
 // function timeOfDay(minutesOffset) {
 //   let minutesNormalized = (DAY_MINUTES + (minutesOffset % DAY_MINUTES)) % DAY_MINUTES;
@@ -119,4 +119,3 @@ const DAY_MINUTES = HOUR_MINUTES * DAY_HOURS;
 //   let [hours, minutes] = [date.getHours(), date.getMinutes()];
 //   return (hours * HOUR_MINUTES + minutes) % DAY_MINUTES;
 // }
-

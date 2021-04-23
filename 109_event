@@ -1,23 +1,24 @@
 /*
-JS109 Study Session
-- Introductions
-  - Where are you at currently? (in course, in assessment process)
-  - How are you prepping for exam?
-- Assessment Format & expectations
-  - Written
-  - Interview
-- Questions
-- Practice
-  - Conceptual (written prep)
-  - Technical (interview prep)
-  
-  
-  
-  
 Given a divisor and a bound, find the largest number N such that:
 N is divisible by the divisor
 N is less than or equal to the bound
 N is greater than 0.
+
+Input:
+- expected - two numbers (divisor and bound), integers > 1 
+- actual - validation?
+Output:
+- a number (N)
+
+Rules:
+- N > 0
+- N <= bound
+- N divisible by divisor
+
+Algorithm:
+1. Start with bound and check if divisible by divisor
+2. If so, return value, otherwise decrease by one
+3. Repeat
 
 Test Cases
 console.log(maxMultiple(2, 7) === 6);
@@ -68,11 +69,5 @@ accum("abcd")    // "A-Bb-Ccc-Dddd"
 accum("RqaEzty") // "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
 accum("cwAt")    // "C-Ww-Aaa-Tttt"
   
-  
-  
-  
-  
-  
-  
-  */
+   */
 
